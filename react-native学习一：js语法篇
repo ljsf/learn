@@ -160,7 +160,7 @@ Object.keys
  
  The Global Object  全局对象
  在浏览器中 window就是全局变量
- window.clear()  // 就是清除窗口，全局变量
+ window.clear()  // 就是清除窗口，全局变量 也可以用 consol. clear()
  
  node是全局变量时 global
   
@@ -177,8 +177,83 @@ const arr = makeFunctionArray()
 
 arr[0]()  // 打印出5 因为数组存的不是i而是function(){console.log(i)} 所有，打印出的数字和i有关系，这个时候，你如果用var i = 6则打印出的是6
 所有最好是使用let要好点，let i只是起一个局部变量的作用，用完就马上重置
+因为代码是全部读完以后才执行，那么用var怎么才能打印出正确答案，只能是用IIFE立刻执行
 
  每个let只在局部中有作用，每次用完都会被重置，JavaScript中有计数器是专门计数使用的
+ 
+ IIFE: 立即表达式
+ 
+ first-classes-function
+  map filter reduce
+  
+ map 映射 把一个东西映射到另一个值
+  const x = [0,1,2,3]
+  function addOne(number) {return number + 1}
+  addOne(1)  // 2
+  x.map(addOne) // [1,2,3,4]
+  
+ filter : 过滤器
+ 
+ function isGreaterThanOne(num) {return num > 1}
+ isGreaterThanOne(100) // true
+ isGreaterThanOne(1) // false
+ x.filter(isGreaterThanOne) // [2.3]
+ 
+ reduce: 
+ function add(x, y) { return x + y}
+ x.reduce(add) // 6
+ 
+ for example  ---map
+ function map(arr, fn) {
+  const newArr = []
+  for (let i = 0; i < arr.length; i++) {
+   let val = arr[i]
+   new Arr.push(fn(val))
+  }
+  return newArr
+ }
+ map(x,addOne)
+ 
+ ========================async 异步=========================
+ function printOne() {
+  console.log('one')
+ }
+ 
+ function printTwo() {
+  console.log('two')
+ }
+ 
+ function printThree() {
+  console.log('three')
+ }
+ 
+ setTimeout(printOne, 1000)
+ setTimeout(printTwo, 0)  // 不加括号
+ printThree()
+ 
+ // three two one
+ 把时间放到api中到列队在到堆栈中执行
+ 把函数放到api中1秒中，然后放入queue（列队中），然后列队放入堆栈中运行
+ 
+ function recurse() {
+  console.log('recursion')
+  return recurse()
+ }
+ 
+ recurse()
+ 
+ --callback
+  function doSomething(callback) {
+   callback(1)
+  }
+  doSomething(console.log)  // 1
+  
+  function doSomethingAsync(callback) {
+   setTimeout(function() {callback(1)}, 1000)
+  }
+  doSomethingAsync(console.log)  // 1
+  
+  
  
  
 
