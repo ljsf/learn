@@ -1,0 +1,82 @@
+>Date
+>const d = new Date()
+>d  // 时间
+>d.toString() // 变成字符串时间
+>Date.now() // 现在的时间
+
+class Set {     
+  constructor(arr) {
+    this.arr = arr
+  }
+  
+  add(val) {    // value 简称 val
+    if (!this.has(val)) this.arr.push(val)
+  }
+  
+  delete(val) {
+    this.arr = this.arr.filter( x => !== val)
+  }
+  
+  has(val) {
+    return this.arr.includes(val) // 注includes是判断有没有这个值
+  }
+  
+  get size() {    // 这个是js中快捷取值的方法，不需要加() 因为加上get以后就不在是一个函数了, 而是单纯提供值而已 快捷语法 s.size
+    return this.arr.length
+  }
+  
+}
+
+console.log("s should have members and actually has:" , s.size)
+console.log("s should have members and actually has:" + s.size) // 一样的,和+都是
+
+====includes=====
+const arr = [1,2,3,4]
+arr.includes(1) // true
+arr.includes(5) // false
+reduce and filter and map 前面是数据后面是条件，把前面的数据通过后面的条件
+
+======继承函数 extends======
+class MySet extends Set {
+  constructor(arr) {
+    super(arr);
+    this.originalArray = arr
+  }
+  add(val) {
+    super.add(val);   // 引用分类的值，必须要加super.才行，初始化的必须要引用的
+    console.log(`added ${val} to the set!`)
+  }
+  
+}
+
+====How vs what======React===
+for example guitar
+
+const strings = ['E', 'A', 'D', 'G', 'B', 'E']
+function Guitar() {
+  // create a head and add pegs
+  const head = createElement('head')
+  for (let i = 0; i < 6; i++) {
+    const peg = createElement('head')
+    head.append(peg)
+  }
+  // create neck and add frets
+  const neck = createElement('neck')
+  for (let i = 0; i < 19; i++) {
+    const fret = createElement('fret')
+    head.append(fret)
+  }
+
+  // create body and add strings
+  const body = createElement('body')
+  strings.forEach(tone => {   // forEach
+    const string = createElement('string')
+    stringtune(tone)
+    body.append(string)
+  })
+  return body
+}
+可以自己声明DOM，并调用他
+容易组件化
+
+React的原则是，任何东西组件化
