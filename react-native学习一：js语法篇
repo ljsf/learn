@@ -254,7 +254,77 @@ arr[0]()  // 打印出5 因为数组存的不是i而是function(){console.log(i)
   doSomethingAsync(console.log)  // 1
   
   
+Promise： 在异步操作中，最终都会执行、
+then中，只要有错误，就一直往下一个then运行，直到找到catch为止
+ const url = ''
  
- 
-
+ fetch(url)
+ .then(function(res) {
+  return res.json()
+ })
+ .then(function(json) {
+  return ({
+   importantData: json.importantData,
+  })
+ })
+ .then(function(data) {
   
+ })
+ .catch(function(err) {
+  
+ })
+ 
+ 
+ ======callback 回调函数=======
+ 解释：A callback is a function that is passed as an argument to another function and is executed after its parent function has completed.
+ 回调函数是一个函数，它作为参数传递给另一个函数，并在父函数完成后执行。
+ for example：
+  function doSomething(msg, callback){
+   alert(msg);
+   if(typeof callback ==== "function") callback();
+  }
+  doSomething("回调函数", function(){
+   alert("匿名函数实现回调!");
+  })
+
+ 回调函数：回调与同步、异步并没有直接的联系，回调只是一种实现方式，既可以有同步回调，也可以有异步回调
+ 
+ .then==============
+ then的意思是，上一个执行完之后，执行下一个
+ xhrCall()
+  .then(S1, E1) //P1
+  .then(S2, E2) //P2
+  .then(S3, E3) //P3
+  
+ 
+ =========this=========
+const person = {
+ name: 'jordan',
+ greet: function() {console.log('hrllo' + this.name)}
+}
+
+person.greet() //'hello jordan'
+
+const greet = person.greet
+
+greet() // 'hello undefined' 因为this是指针有关系，对象的指向就是this的方向
+// this 是指向内存的方向，
+const friend = {
+ name: 'david',
+}
+friend.greet = person.greet
+friend.greet()  // 'hello david' this.name = 'yowon' 在node中可以执行,但是在一个文件中不想
+const greet = person.greet // const greet = person.greet.bind({name: 'this is a bound object'}) //
+person.greet.call({name:.....}) // 
+person.greet.apply({name:....}) //
+greet() // 'hello undefined'
+
+
+=======DOM======document-object-model=======================
+TREE
+doc===> html=====>head/body
+HTML文件就是一个DOM模型，有很多的节点组成
+可以用JavaScript来扩展dom
+HTML DOM 定义了访问和操作 HTML 文档的标准
+
+// Assignment: 任务的意思
