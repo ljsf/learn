@@ -326,5 +326,6 @@ doc===> html=====>head/body
 HTML文件就是一个DOM模型，有很多的节点组成
 可以用JavaScript来扩展dom
 HTML DOM 定义了访问和操作 HTML 文档的标准
+DOM： DOM把整个页面看成一个多层次的节点结构，HTML和XML页面的每个节点组成都是某种类型的节点，执行节点包含不同的数据类型
 
 // Assignment: 任务的意思
