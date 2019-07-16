@@ -124,7 +124,59 @@ Object.keys
  
  
  ======================scope=============================
+ const obj = {}
+ obj = {} //错误的，因为这是常量，这是建立了一个新的存储位置
+ obj.a = 'a' // 这是对的,因为他存储的位置没有变化，只是往存储位置加入了数值而已，const针对的是存储位置的变化
  
+ const thisIsAConst = 50;
+ // thisIsAConst++  // error
+ 
+ const constObj = {}
+ constObjt.a = 'a'
+ let thisIsALet = 51
+ thisIsALet = 50
+ 
+ // let thisIsALet = 51 //errors 不能重复声明
+ 
+ var thisIsAVar = 50
+ thisIsAVar = 51
+ var thisIsAVar = 'new value!'  // 完全可以覆盖前面的变量 
+ 
+ // Hoisting
+ 
+ function thisIsHoisted() {
+  console.log('this is a function declared at the bottom of a filled')
+ } // 你可以在上面调用他，他会被提升
+ 
+ const thisIsNotHoisted = function() {
+  console.log('should this be hoisted?')
+ } // 没有被提升 let也是没有被提升 perferenceError
+
+ var thisIsNotHoisted = func.. // 用var声明的变量会被提升，这个时候在这个函数前，声明的是var thisIsNotHoisted = undefined 所以是typeError
+ 
+ 为什么会出现这样的情况：在执行代码，他会读取所有的代码 读取的时候会var，然后在执行，
+ es6 之后完全可以用let和const来代替var了，可以不使用var了
+ 
+ 
+ The Global Object  全局对象
+ 在浏览器中 window就是全局变量
+ window.clear()  // 就是清除窗口，全局变量
+ 
+ node是全局变量时 global
+  
+=====================closures 闭包==============================
+function makeFunctionArray() {
+ const arr = []
+ 
+ for (var i = 0; i < 5; i ++) {
+  arr.push(function() {console.log(i) })
+ }
+ return arr
+}
+const arr = makeFunctionArray()
+
+arr[0]()
+
  
  
 
