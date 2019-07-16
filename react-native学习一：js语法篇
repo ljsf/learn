@@ -1,0 +1,131 @@
+const arr = [
+ 'string',
+ 42,
+ 'function() {console.log('hello')}
+]
+// 运行
+arr[2]()
+
+for  (let i = 0; i < arr.length: i++) {
+  console.log(arr[i])
+}
+
+判断类型
+const x = 42;
+console.log(typeof x) // number
+typeof null // object类型
+var a String(x) // a = "42"
+
+boolean 是false的有：
+  1.null
+  2.undefined
+  3.false,
+  4.+0,-0, NaN
+  5.
+boolean中true的有：
+  {}
+  []
+  evertything else
+
+类型：undefined, null, boolean, number, string, (symbol)
+
+const o = new Object();
+o.firstName = "Jordan";
+o.lastName = 'Hayashi';
+o.isTeaching = true;
+o.greet = function() {
+  console.log('hi!')
+}
+const o2 = {}
+consot o2 = {
+
+}
+
+以上都是对象方法，都是一样的 在js中const创建的对象时是看看呀修改里面的内容，但是常量值不可以的
+  const o = {
+    a: 'a',
+    b: 'b',
+    obj: {
+        key: 'key',
+      },
+  };
+  
+  o.a = 'new_a' // 这个是对的
+  const PI = 3.14;
+  PI = 3.15 // 这个是错的
+  
+  const o2 = o;
+  o.a = 'new value'
+  console.log(o2.a) // new value
+  
+  对象时存储在一个位置的，就是指针指向的问题。。。。。
+  
+  那么现在这么实现获得相同的值，但是，修改不一样？
+    第一种方法：
+    const o2 = {
+      a: 'a',
+      b: 'b',
+      obj: {
+        key: 'key',
+      },
+    };
+    第二种方法:
+    const o2 = Object.assign({}, o)
+    第三种方法：
+    const o2 = {...o}
+    
+  // deep copy
+  function deepCopy(obj) {
+    // check if vals are objects
+    // if so, copy that object (deep copy)
+    // else return the value
+    const keys = Object.keys(obj)       
+    const newObject = {}
+    for (let i = 0; i < keys.length; i++) {
+      if (typeof obj[keys[i]] === 'object') {
+        newObject[key] = deepCopy(obj[key])
+      } else {
+        newObject[key] = obj[key]
+      }
+    }
+    return Object.assign({}, obj)
+  }
+  
+  
+Object.keys
+// Object.keys  定义：返回一个对象可枚举属性的字符串数组； Object.getOwnPropertyNames  定义：返回一个对象可枚举、不可枚举属性的名称
+  // simple array
+  var arr = ['a', 'b', 'c'];
+  console.log(Object.keys(arr)); // console: ['0', '1', '2']
+
+  // array like object
+  var obj = { 0: 'a', 1: 'b', 2: 'c' };
+  console.log(Object.keys(obj)); // console: ['0', '1', '2']
+
+  // array like object with random key ordering
+  var anObj = { 100: 'a', 2: 'b', 7: 'c' };
+  console.log(Object.keys(anObj)); // console: ['2', '7', '100']
+
+  // getFoo is a property which isn't enumerable
+  var myObj = Object.create({}, {
+    getFoo: {
+      value: function () { return this.foo; }
+    } 
+  });
+  myObj.foo = 1;
+  console.log(Object.keys(myObj)); // console: ['foo']
+  
+  const arr = []
+  arr.push('value')
+ arr.__proto__可以显示内置方法
+ 
+ const num = 42;
+ num.toString()   // "42"
+ 
+ 
+ ======================scope=============================
+ 
+ 
+ 
+
+  
