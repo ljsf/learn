@@ -175,8 +175,10 @@ function makeFunctionArray() {
 }
 const arr = makeFunctionArray()
 
-arr[0]()
+arr[0]()  // 打印出5 因为数组存的不是i而是function(){console.log(i)} 所有，打印出的数字和i有关系，这个时候，你如果用var i = 6则打印出的是6
+所有最好是使用let要好点，let i只是起一个局部变量的作用，用完就马上重置
 
+ 每个let只在局部中有作用，每次用完都会被重置，JavaScript中有计数器是专门计数使用的
  
  
 
