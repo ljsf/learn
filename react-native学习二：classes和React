@@ -80,3 +80,84 @@ function Guitar() {
 容易组件化
 
 React的原则是，任何东西组件化
+=====================jsx=======================
+for example const App = (props) => (
+  <div style={styles}>
+    <h2>{props.count}</h2>
+  </div>
+  );
+  
+  const App2 = function(props) {
+    return (
+      <div>
+        <h2>{props.count}</h2>
+      </div>
+    );
+  }
+  
+  let count = 0;
+  setInterval(
+    function() {render(<App2 count={count++}} />,doucument},
+    1000
+   )
+   
+===============state====
+  this.state and this.setState
+  class App extends React.Componennt{
+    constructor(props) {
+      super(props);
+      this.state = {
+        count: 0,
+      }
+    }
+    increaseCount() {
+      this.setState({
+        count: this.state.count + 1
+      })
+    }
+    render() {
+      return (
+        <div style={styles}
+          <div>
+            <button onClick={this.increaseCount.bind(this)}>Increase</button> // or with <button onClick={() => this.increaseCount()>Increase</button>}
+          </div>
+          <h2>{this.props.count}</h2>
+        </div>
+      );
+    }
+  }
+  // 调用
+  setInterval(
+    function()) {render(<App count={count++} />, document.getElementById('root')},
+    1000
+   )
+   
+   render(<App.count={count++} />,document.getElementById('root');
+   // 箭头函数会自动绑定this，所有在jsx调用中要用箭头函数，
+   // this指向的是当前函数的作用域(对象实例)
+   // 如果你传递一个函数名给一个变量，然后通过在变量后加括号’()'来调用这个方法，此时方法内部的this的指向就会丢失。这就会出现外部的foo方法内部的this会丢失指向
+   // 为了解决这个问题，我们需要在实例化对象的时候，需要在构造函数中绑定this，使得无论事件处理函数如何传递，它的this的指向都是固定的，固定指向我们所实例化的对象。
+   
+   记住直接利用箭头函数代替即可
+   
+   increaseCount(){
+    this.setState({count: this.state.count + 1})
+    this.setState({count: this.state.count + 2)    只会运行一个，因为是一个异步请求，一次只能调用一个
+    console.log(this.state.count) // 0
+   }
+   // 因为this.setState是一个异步操作，他先发送请求，在请求的这个过程中运行了下一个内容,console.log(this.state.count)，才进行修改，所以那个时候还没有进行修改
+   // this.setState发的是多次请求，后面的请求会覆盖前面的请求，所以只执行，后一次this.setState({count: this.state.count + 2})
+   // 这个时候的办法是，怎么才能一起运行呢？ 每请求一次，等着他运行完，这样就是同步操作了 或者是每次请求记成一个新的请求就不会覆盖了
+   // 保留异步操作，但是对每次请求，都单独存在一个地方里面，这样就会累加起来，而不是覆盖merge
+   increaseCount() {
+    this.setState(preState => ({count: prevState.count + 1})) // prevState可以换成任何一个数字
+    this.setState(preState => ({count: preState.count + 2}))
+    console.log(this.state.count) // 打印出来是 0
+   }
+   // prevState是一个传递的参数, 在this.setState中传递的参数就是代表this.state中的内容prevState
+   // 也就是此时的this.setState的状态请求状态，只能是请求转态，此时的请求转态包括了count: prevStatecount + 1
+   
+   
+   
+
+
