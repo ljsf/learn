@@ -158,6 +158,29 @@ for example const App = (props) => (
    // 也就是此时的this.setState的状态请求状态，只能是请求转态，此时的请求转态包括了count: prevStatecount + 1
    
    
+   ====================todoApp=======================
    
-
+   function newTodo() {
+    // get text
+    // create li
+    // create input checkbox
+    // create button
+    // create span
+   }
+   
+   function deleteTodo() {
+    // find 
+   }
+   
+   class App extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        todos: [],
+      }
+    }
+    render() {
+      return ();
+    }
+   }
 
