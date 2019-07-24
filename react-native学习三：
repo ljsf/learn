@@ -84,4 +84,16 @@ componentWillUnmount() {
 } 卸载程序中就会有，防止内存泄漏
 
 
+===============================组件===================================
+开发环境：
+可以使用snack来快速开发react-native
+XDE
+import/export 
+=============PropTypes=============================
+API count 只在开发中运行，不会影响运行速度，随着api调用的多，可以看到警告
+Count.propTypes = {
+ count: PropTypes.number.isRequired
+}
+
+
  
