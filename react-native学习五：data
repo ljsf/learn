@@ -4,3 +4,13 @@ https://www.randomuser.me/
 fetch请求api
 
 fetch().then
+
+async function fetchUsers() {
+  const respose = await fetch('https://')
+}
+========================异步操作==================
+
+
+
+===========================debuger====================
+
