@@ -1,1 +1,37 @@
+Flux:
+  view
+  action----dispatch----->store
 
+Redux:  redux:是一个数据管理库
+  1.单一数据源：整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中
+  2.State 是只读的： 唯一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。
+  3.使用纯函数来执行修改： 为了描述 action 如何改变 state tree ，你需要编写 reducers。
+  
+  action----> store----->view
+  
+  for example:
+    Reducer:Reducers 指定了应用状态的变化如何响应 actions 并发送到 store 的，记住 actions 只是描述了有事情发生了这一事实，并没有描述应用如何更新 state
+    
+    const reducer = (state, update) =< ({
+     ...state,
+     ...update,
+    })
+    
+    let state = {}
+    state = reducer(state, {foo: 'foo'})
+    state = reducer(state, {foo: 'baz'})
+    
+    store:
+    Store 就是把它们联系到一起的对象。Store 有以下职责：
+
+    维持应用的 state；
+    提供 getState() 方法获取 state；
+    提供 dispatch(action) 方法更新 state；
+    通过 subscribe(listener) 注册监听器;
+    通过 subscribe(listener) 返回的函数注销监听器
+    
+   for example:
+    
+    
+    Action 是把数据从应用（译者注：这里之所以不叫 view 是因为这些数据有可能是服务器响应，用户输入或其它非 view 的数据 ）传到 store 的有效载荷。它是 store 数据的唯一来源。一般来说你会通过 
+    
