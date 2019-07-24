@@ -74,8 +74,14 @@ componentDidUpdate
 
 方法有：
  componentWillReceiveProps(nextProps)	
- shouldComponentUpdate(nextProps, nextState)	// 返回是true和false，默认只要有数字是true，0是false
+ shouldComponentUpdate(nextProps, nextState)	// 返回是true和false，默认只要有数字是true，0是false 是决定更新还是不跟新
  render()
  componentDidUpdate(prevProps, prevState)
+
+Unmount：
+componentWillUnmount() {
+ clearInterval(this.interval)	
+} 卸载程序中就会有，防止内存泄漏
+
 
  
