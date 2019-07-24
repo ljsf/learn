@@ -94,6 +94,16 @@ API count 只在开发中运行，不会影响运行速度，随着api调用的�
 Count.propTypes = {
  count: PropTypes.number.isRequired
 }
+import PropTypes from 'prop-types';
 
+class Count extends Component {
+ static propType = {
+  count: PropType.number.isRequired,
+ }
+}
 
+how to read docs
+ 1.have a goal in mind
+ 2.see what the libray/api
+ 3.find something docs
  
