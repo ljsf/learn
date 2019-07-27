@@ -1,0 +1,22 @@
+1.redux
+  react中代码是从export default开始运行的，也就相当于是从底部往上运行的
+  
+  for example:
+  
+  export default connect(state => ({
+   state: state.counterReucer
+   }),
+   )(Route);
+   
+   先运行的是connect内容，然后把在运行的是Route内容到时是直接放在 this.props中可以查看的，里面放入的内容就是this.props中查看的内容，state是整个state，
+   二state.counterReducer是单独这个文件的state
+   
+   export default connect(state => ({
+   state: state.counterReucer
+   }),
+   (dispatch) => ({bindActionCreators(counterActions, dispatch)
+   }),
+   )(Route);
+   
+   // 这个也是在 this.props中加入所有的action，绑定了所有的action，bindActionCreators是绑定所有的action
+   
