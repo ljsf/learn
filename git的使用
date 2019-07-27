@@ -1,0 +1,5 @@
+1.git init  #加入git
+2.git add REAME.me  #加入git中
+3.git commit -m "first commit" #提交到git中
+4.git remote add origin https://github.com/.....git # 上传代码到github中
+5.git push -u origin maseter
