@@ -142,6 +142,13 @@ navigationOptions
   headerTitleStyle
 
 
+注： 使用箭头函数的时候
+const test = () => {
+  return ();    // 并需要有return，当使用花括号的时候
+}
+const test = () => (
+  (); // 不需要return 
+)
  
   
   
