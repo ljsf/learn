@@ -81,8 +81,71 @@
  componentWillUnmount()
  
  2.react-navigation
+ 生命是导航器
+ createStackNavigator： 类似Navigator
+ createBottomTabNavigator： 底部bottom
+ createMaterialTopTabNavigator： 屏幕底部的材料设计主题标签栏
+ createDrawerNavigator： 抽屉效果，侧边滑出
+ createSwitchNavigator： SwitchNavigator的用途是一次只显示一个页面
+ 
+ screen navigation props（屏幕导航属性）：通过navigation可以完成屏幕之间的调度操作，劣徒打开另一个屏幕
+ screen navigationOptions(屏幕导航选项): 通过navigationOptions可以定制导航器显示屏幕方式（列如： 头部标题，选项卡标签等）
+ 
+ 导航器所支持的Props
+ ref： 可以通过ref属性获取navigation
+ onNavigationStateChange(prevState, newState, action) 属性，每次当导航器所管理的state发生改变时，都会调用方法；
+  prevState: 变化之前的state
+  newState: 新的state；
+  导致state变化的action;
+ 
+ navigation包含一下功能：
+  navigate： 跳转到其他界面；
+  state： 屏幕的当前state；
+  setParams： 改变路由的params；
+  goBack： 关闭当前屏幕；
+  dispatch：先路由发送一个action；没有navigate的时候可以通过这个跳转
+  addListener: 订阅导航生命周期的更新；
+  isFocused：true标识屏幕获取了焦点
+  getParam： 获取具有回退的特地参数；
+  dangerousGetParent： 返回父导航器；
+
+ 页面跳转：
+ navigation.navigate(routeName, params, action, key)
+ RouteName: 要跳转的路由名，
+ params： 要传递给下一个界面的参数；
+ action: 如果该界面是以navigator的话，要运行这个sub-action
+ key: 要导航到的路由的可选标识符，如果存在，将后退到此路由
+ 
+NavigationAction会使用navigate action的结果来更新action
+
+setParams
+
+比如进入APP是有后splash不再使用了，我们可以使用NavigationActions.reset重置他
+
+replace： 用另一个路由替换指定的路由
+push： 总是会创建一个新的页面
+
+createStackNavigator API
+createStackNavigator(RouteConfigs, StackNavigatorConfig)
+RouteConfigs(必选)
+  screen: 
+  path
+  navigationOptions：配置导航选项： title， headerTitle
+StackNavigatorConfig（可选）： 
+
+navigationOptions
+  title: null
+  headrTitel: 
+  headerRight: 
+  headerLeft: 
+  headerStyle
+  headerTitleStyle
+  
  
  
+  
+  
+  
  
  
  
