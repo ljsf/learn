@@ -1,0 +1,88 @@
+1.react基础知识
+  命令式编程： 命令“机器”如何去做事情（how），这样你想要什么（what）， 它都会按照你的命令实现
+  声明式编程： 告诉“机器”你想要的是什么（what），让机器想出如何去做（how）
+ 
+ 2.组件化的开发模式 {}
+ 
+ 属性注释{//}
+ var component = <Component foo={x} />
+ var props = {};
+ 
+ 减少嵌套： 返回平级的标签
+ ```
+ class HelloMessage extends React.Component {
+    render() {
+      let views=[];
+      views.push(<h1>Hello {this.props.name}</h1>);
+      views.push(<h1>Hi {this.props.name}</h1>);
+      return views;
+    }
+ }
+ ```
+ 
+ PropTypes是接收验证的，是否符合要求的，
+ ```
+ import PropTypes from 'prop-types'
+ class MyTitle extends React.Component{
+  static defaultProps={
+    shortName: 'MyTitle'
+  };
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+  };
+  render() {
+    return <h1> title:{this.props.title}</h1>;
+  }
+ }
+ ```
+ 
+ ref属性（获取真实的DOM节点）
+ class Alert extends React.Component {
+  showAlert(message) {
+    alert(`Debug: ${message}`);
+  }
+  render() {
+    return null;
+  }
+ }
+ class MyTitle extends React.Component {
+  onClick = () => {
+    this.refs.alert.showAlert('MyTitle');
+  };
+  render() {
+    return <div>
+      <h1 onClick={this.onClick}>Click me</h1>
+      <Alert ref='alert' />
+    </div>;
+  }
+ }
+ 
+ // 初始化state
+ state = {
+  
+ };
+ 
+ 组件生命周期方法：
+ Mounting
+ constructor  --->  render componentDidMount
+ Updating New props setState() forceUpdate() ----> render----componentDidUpdate
+ 
+ Unmounting ---> componentWillUnmount
+ 不安全的方法： 不要用
+ componentWillMount
+ componentWillReceiveProps
+ componentWillUpdate
+ 
+ render方法是必须要的
+ null 和Boolean是不渲染的意思
+ 
+ componentDidMount() 如果需要获取真实的DOM节点就放在这个里面放入constructor，包括获取远程数据
+ shouldComponentUpdate(nextProps, nextState)
+ componentWillUnmount()
+ 
+ 2.react-navigation
+ 
+ 
+ 
+ 
+ 
