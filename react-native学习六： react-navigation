@@ -158,7 +158,11 @@ const o = {
 o && o.b === 'b'  和 o.b === 'b'是一样的
 
   
-  
- 
+  createMaterialTopNavigator API使用：
+  不同的部分：
+    tabBarComponent
+    tabBarPosition
+    swipeEnabled
+    initialLayout： 初始化的高度，防止出现延迟
  
  
