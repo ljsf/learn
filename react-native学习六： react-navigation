@@ -164,5 +164,26 @@ o && o.b === 'b'  和 o.b === 'b'是一样的
     tabBarPosition
     swipeEnabled
     initialLayout： 初始化的高度，防止出现延迟
+
+
+ 抽屉：createDrawerNavigator API
+ DrawNavigatorConfig
+ drawerWidth: 设置侧边菜单的宽度
+ 
+ createSwitchNavigator： 主要用于一次只运行一个操作的
+ initialRouteName： 第一次加载时初始化选项卡路由的RouteName
+ resetOnBlur： 切换离开屏幕时， 重置所有嵌套导航器的状态，默认为true
+ paths 提供routeName到path配置的映射，它重写routeConfigs中设置的路径
+ backBehavior： 控制“返回”按钮是否会导致Tab页切换到初始化Tab页， 如果是，设置为initialRoute，否则none，默认为none行为
+ 
+ 登录场景：
+  1.用户打开应用
+  2.该程序从持久存储中加载某个身份验证转态 （例如，AsyncStorage）
+  3.当转态被加载时，根据是否加载有效的认证转态，向用户呈现认证页面或者主页面
+  4.当用户注销时，我们清除认证状态并跳转到认证页面
+  5.注意： 我们说“认证页面”，因为通常有不止一个，你可能会有一个主页面，其中包含用户名和密码字段，一个用于“忘记密码”的页面，一个用用注册的页面
+  
+  
+ 
  
  
