@@ -150,7 +150,13 @@ const test = () => (
   (); // 不需要return 
 )
  
-  
+
+const o = {
+  a: 'a',
+  b: 'b',
+}
+o && o.b === 'b'  和 o.b === 'b'是一样的
+
   
   
  
