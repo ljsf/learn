@@ -17,3 +17,11 @@ getItemCount： 获取数量
 onEndReachedThreshold： 多长时间的时候调用
 使用箭头函数
 
+SwipeableFlatList   带有侧滑效果 比如右滑删除 
+  maxSwipeDistance  最大滑动距离
+  renderQuickActions： 创建侧滑菜单
+  bounceFirstRowOnMount ?: boolean  默认是false，true，会提示的作用
+  
+SectionList高性能，水平也支持的
+FlatList唯一的不同就是，有分组的效果
+
