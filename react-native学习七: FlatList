@@ -1,0 +1,19 @@
+ListView：数据多的时候，会出现卡顿，他是全部渲染的，会占用大量的内存
+FlatList：基于VirtualizedList  下拉刷新 做数据加载 key属性keyExtractor函数来生成key
+SectionList： 分组
+
+```
+<FlatList
+  data={[{key: 'a'}, {key: 'b'}]}
+  renderItem={({item}) => <Text>{item.key}</Text>}
+/>
+```
+removeClippedSubviews属性目前是不必要的，而且可能会引起问题false为默认值
+onRefresh刷新
+horizontal： 水平还是竖直
+ItemSeparaComponent: 分割线
+getItemCount： 获取数量
+
+onEndReachedThreshold： 多长时间的时候调用
+使用箭头函数
+
