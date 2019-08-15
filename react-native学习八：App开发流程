@@ -1,0 +1,49 @@
+react-native + redux
+需求分析：
+软件开发流程：
+
+需求分析--->UI界面设计--->编码开发---->测试---->上线
+1.需求分析
+为什么要开发这款App
+  Trending客户端
+  能搜索GitHub上的项目
+  有离线缓存
+  扩展功能
+  支持50多种编程语言 --> 收藏---分享
+  订阅-->取消 
+  排序
+  多彩主题  统计的功能
+ 
+ 技术分析：
+  基础部分：
+  布局：FlexBox Style/css
+  组件：react-navigation
+  列表： FlatList
+  RN组件：react-native-splash-screen react-native-vector-icons react-native-code-push
+  Native组件： 统计和分享， 分享， 第三方登录
+  自定义组件：SafeAreaViewPlus由于全面屏
+  
+  网络和存储： 
+    AsyncStorage 
+    Fetch 
+    离线缓存框架
+  
+  框架：
+    Redux react-redux redux-thunk react-navigation-redux-helpers
+    Flux
+    
+   高级：
+    Native Modules: 图片裁剪  统计SDK 分享SDK
+    react-native混合开发 RN+Android RN+ios混合开发
+    全面屏设配指南： ios Android
+    react-native更新升级 手动更新 react-native-git-upgrade
+   
+   打包发布与更新：
+    CodePush热更新
+    Android打包发布
+    iOS打包发布
+    
+    技术栈：
+    
+  
+  
