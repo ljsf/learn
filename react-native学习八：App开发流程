@@ -61,5 +61,14 @@ react-native + redux
       util
       App.js是项目的入口
       
-      
+ 
+ react-navigation 3.x
+  createAppContainer 必须要使用
+  navigationOptions 改成defaultNavigationOptions
+  
+  搭建App的导航框架： 是所有App打开的入口 动态的修改App
+  
+  
+  
+  
   
