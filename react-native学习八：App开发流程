@@ -68,7 +68,8 @@ react-native + redux
   
   搭建App的导航框架： 是所有App打开的入口 动态的修改App
   
+  注：所有的react-navigation组件如果要放入 组件中就必须要用createAppContainer中注册才行 
   
-  
+  基本上都可以用箭头函数来代替类
   
   
