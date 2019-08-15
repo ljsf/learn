@@ -74,4 +74,8 @@ react-native + redux
   
   console.disableYellowBox = true 可以禁止黄匡的警告
   
+  const不能出现重新的变量，很重要，负责会出错，screen这里和哪里不要重复名字
+  Favorite: {
+    screen: FavoritePage  // 不能名字一样
+  }
   
