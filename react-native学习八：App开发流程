@@ -70,6 +70,6 @@ react-native + redux
   
   注：所有的react-navigation组件如果要放入 组件中就必须要用createAppContainer中注册才行 
   
-  基本上都可以用箭头函数来代替类
+  基本上都可以用箭头函数来代替类 <Text></Text>可以里面可以使用onPress
   
   
