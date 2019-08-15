@@ -79,3 +79,9 @@ react-native + redux
     screen: FavoritePage  // 不能名字一样
   }
   
+  
+  npm install --save react-navigation-tabs
+  
+  注代码声明的时候还要分前后顺序，如果， 在用到的时候，之后声明会无效，必须要在，遇到之前声明
+  
+  
