@@ -46,4 +46,20 @@ react-native + redux
     技术栈：
     
   
+  项目目录：
+    js：
+      action
+      reducer
+      store
+      
+      model：存放模型
+      common： 项目的公共的model
+      expand： 放dao  DAO(Data Access Object) 数据访问对象
+      navigator： 项目导航框架
+      page：
+      res： 项目遇到的js文件，js数据，全局的样式
+      util
+      App.js是项目的入口
+      
+      
   
