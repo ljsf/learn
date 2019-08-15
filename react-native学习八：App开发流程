@@ -72,4 +72,6 @@ react-native + redux
   
   基本上都可以用箭头函数来代替类 <Text></Text>可以里面可以使用onPress
   
+  console.disableYellowBox = true 可以禁止黄匡的警告
+  
   
