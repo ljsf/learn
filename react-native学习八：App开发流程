@@ -84,4 +84,52 @@ react-native + redux
   
   注代码声明的时候还要分前后顺序，如果， 在用到的时候，之后声明会无效，必须要在，遇到之前声明
   
-  
+======================redux============================================================
+加入redux来使用项目
+什么是redux： 是JavaScript转态容器，提供预测状态栏view----dispatch-->action---store---state
+什么是异步数据流
+
+单一数据源
+State 是只读的
+使用纯函数来执行修改
+
+Action创建函数：就是生成action方法
+function addToto(text){
+  return {
+    type: ADD_TODO,
+    text
+  }
+}
+
+reducer是根据action修改state变成下一个state，记住actions只能描述有事情发生的事实
+不要做这些
+修改传入的参数：
+执行有副作用的操作，如API请求和路由跳转，
+调用非纯函数，如Date.now() 或者，Math.random()
+
+Object.assign()
+
+
+维持state
+提供getState()方法获取state
+dispatch(action)方法更新state
+高级Action
+异步action  redux-thunk 异步action，
+异步数据流：
+redux
+react-redux： 
+redux-devtools： Redux开发工具支持热加载上使用redux开发的一个用户react上redux库
+redux-thunk： 实现action异步的middleware
+redux-persist： 支持store本地持久化
+redux-observable: 实现可取消action
+
+<Provider>组件： 这个组件需要包裹在整个组件树的最外层，这个组件让根组件的所有字孙组件能够轻松的使用connect()方法绑定store
+connect(): 这是react-redux提供一个方法，如果一个组件需要响应状态的变化，就把自己作为参数传递给connect()的结果，connect()方法会处理store绑定的细节，并通过selector确定该绑定store中那一部分的数据
+selector： 这是你自己编写的一个函数，这个函数声明了你的组件需要整个store那一部分数据作为组件的props
+dispatch： 每当你想要改变应用中的状态时， 你就要dispatch一个action，这也是唯一改变状态的方法
+
+react-navigation中使用redux
+安装 npm install --save react-navigation-redux-helpers
+```
+import {}
+```
