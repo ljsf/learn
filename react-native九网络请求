@@ -1,0 +1,15 @@
+
+1.使用fetch
+```
+let url = `https://api.github.com/search/repositories?q=${this.searchKey}`;
+fetch(url)
+  .then(response => response.text())
+  .then(reponseText => {
+    console.log(responseText);
+  })
+  .catch(e => {
+    console.log(e.toString());
+  });
+```
+
+Promise fetch(input, init);
