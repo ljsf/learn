@@ -1,0 +1,20 @@
+==========react===================
+declarative
+jsx
+components
+state
+
+babel来编译jsx， 浏览器是不能编译jsx的
+
+class Hello extends React.Component {
+  
+  render() {
+    return <h1>Hello!</h1>
+  }
+}
+
+state:
+
+python flask
+
+ 
