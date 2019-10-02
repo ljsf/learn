@@ -1,0 +1,39 @@
+Flask + uWSGI + Nginx + Ubuntu
+
+uWSGI:
+
+参考网站：https://www.cnblogs.com/knarfeh/p/5616515.html
+
+我们知道 Flask 中自带了 web server，通过 Werkzeug，我们可以搭建 WSGI 服务，运行我们的网站，但 Flask 是 Web 框架，并不是 Web 服务器，尽管 Werkzeug 很强大，但只能用于开发，不能用于生产，对于 Web 服务器，我们有更专业的选择，那就是 uWSGI, uWSGI 是一个全站式的托管服务，它实现了应用服务器（支持多种编程语言）、代理、进程管理器、监视器。取名为 uWSGI 是因为它最早实现的是 Python 语言的 WSGI。
+
+uWSGI 包括四个部分：
+
+uwsgi协议
+web server 内置支持协议模块
+application 服务器协议支持模块
+进程控制程序
+uWSGI 是 C 语言写的，性能比较高。
+
+WSIGI uWSIGI uwsgi区别：
+1.WSIGI 是web服务器网关接口
+2.uwsgi是uWSGI中特别有的协议
+
+uWSGI和Nginx的关系：
+Nginx对于出来静态文件更有优势，性能更好，其实如果是小网站，没有静态文件需要处理，
+如果不止一台服务器，Nginx基本是必选项，通过Nginx，将资源分配给不同的服务器节点，只有一台服务器，也能更好提高的性能，因为Nginx可以通过headers和
+的expires or etag gzip压缩等方式很好处理静态资源，毕竟是c语言写的，调用的是native的函数，
+
+3.若服务器主机上运行了PHP，python等语言写的多个应用，都需要监听80端口，这时候Nginx就是必须要的选项，因为我们需要一个转发的服务
+
+部署准备工作：
+
+https://www.nginx.com/resources/wiki/start/topics/tutorials/install/
+
+  1.安装python
+  
+  2.安装Nginx
+  sudo apt-get install nginx
+  sudo /etc/init.d/nginx start
+  sudo service nginx start
+  
+
