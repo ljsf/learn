@@ -36,4 +36,33 @@ https://www.nginx.com/resources/wiki/start/topics/tutorials/install/
   sudo /etc/init.d/nginx start
   sudo service nginx start
   
+  3.安装uWSGI 依赖安装
+  sudo apt-get install build-essential python-dev
+  sudo pip install uwsgi 最好是局部安装， pipenv install uwsgi
+  
+  安装完成了 uWSGI了
+  
+  使用uwsgi部署Flask项目
+  uwsgi --socket 0.0.0.0:5000 --protocol=http -p 3 -w run:app
+  1.--socket 0.0.0.0:5000：指定暴露端口号为5000。
+  2.--protocol=http：说明使用 http 协议，即端口5000可以直接使用HTTP请求进行访问。
+  3.-p 3表示启动的服务占用3个进程。
+  4.-w run:app：-w 指明了要启动的模块，run 就是项目启动文件 run.py 去掉扩展名，app 是 run.py 文件中的变量 app，即 Flask 实例。
+
+  参考：https://blog.csdn.net/daiyu__zz/article/details/84989126
+  参考https://uwsgi-docs-cn.readthedocs.io/zh_CN/latest/WSGIquickstart.html#flask
+  
+  使用nginx + uwsgi部署Flask项目
+  nginx：
+    1.安全：不管什么请求都要经过代理服务器，这样就避免了外部程序直接攻击web服务器
+    2.负载均衡：根据情况和服务器负载情况，将请求分、分配给不同的web服务器，保证服务器的性能
+    3.提高web服务器的IO性能： 对于一些静态文件，可以直接由反向代理处理，不经过web服务器
+   如何结合Nginx和uwsgi
+   1.先讲解如何从复杂的uwsgi命令参数保存在配置文件中，从而每次启动uwsgi时，无需添加繁琐的参数，只需要指定配置文件即可
+   编辑
+    
+  
+  
+  
+  
 
