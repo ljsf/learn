@@ -1,0 +1,30 @@
+http
+https
+
+npm install -g http-server
+http-server 然后就可以启动，本地的服务器了
+
+curl -vo- http://localhost:8080
+
+内容都是
+肯定要创建数据库，才行，而且 数据库，我觉的，要单独，运行
+
+要写数据库才行
+
+SQL
+面向对象：
+
+class Flight:
+  
+  def __init__(self, origin, destination, duration):
+    self.origin = origin
+    sefl.destination = destination
+    self.duration = duration
+    
+   def main():
+    
+
+
+
+
+
