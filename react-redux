@@ -1,0 +1,28 @@
+first step: 
+ mkdir redux-demo
+ npm init
+ npm install redux
+ touch index.js   code: console.log('From index.js')
+ node index.js show: From index.js
+ 
+ second step:
+  Three Core Concepts
+   
+  Three Principles
+   The state of your whole application is stored in an tree within a single store
+   整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中
+   Second Principles
+    The only way to change the state is to emit an action, an object describing what happing
+    唯一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象
+   Third Principles
+    To specify how the state tree is transformed by action, you write pure reducers
+    为了描述 action 如何改变 state tree ，你需要编写 reducers
+   
+   Three Principles Overview:
+    Javascript App
+    redux store(state)---->App----dispatch--->Action---->Reducer----->redux store(state)
+   
+    
+  
+  
+   
