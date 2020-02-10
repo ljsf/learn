@@ -21,6 +21,8 @@ first step:
    Three Principles Overview:
     Javascript App
     redux store(state)---->App----dispatch--->Action---->Reducer----->redux store(state)
+    
+   imort redux
    
     
   
