@@ -22,7 +22,16 @@ first step:
     Javascript App
     redux store(state)---->App----dispatch--->Action---->Reducer----->redux store(state)
     
-   imort redux
+   在node的解释器中是不能使用imort from 它要用 require代替才行
+   Example: index.js
+    ```
+    import {createStore} from 'redux' no
+    const redux = require('redux') yes
+    const createStore = redux.createStore yes
+    ```
+    node index.js
+   
+
    
     
   
