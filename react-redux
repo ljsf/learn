@@ -32,8 +32,10 @@ first step:
     node index.js
    
 
-   
+  react是随便自己定义组件的
+   <header><header> <hello></hello>都可以
     
-  
+  justify-content: space-between; 是从那边开始，对齐
+  justify-content: space-around; 是从中间开始往两边对齐
   
    
